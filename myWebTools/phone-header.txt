@@ -1,0 +1,21 @@
+<head>
+	<meta charset="UTF-8">
+	<!-- 页面描述性文字，利于搜索引擎抓取网页 -->
+	<meta name="description" content="微信端、webapp">
+	<!-- 为移动设备添加 viewport -->
+    	<meta name="viewport" content="initial-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>  
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>  
+	<meta name="apple-mobile-web-app-capable" content="yes"/>  
+    	<link rel="stylesheet" type="text/css" href="styles/reset.css">
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+	<link rel="stylesheet" type="text/css" href="styles/media.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<!-- 引用respond.js必须放在媒体查询之后，否则不能用 -->
+	<!--[if lt IE 9]>
+		<script src = "http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->  
+	<script type="text/javascript" src="js/index.js"></script>
+	<title>webapp</title>
+</head>

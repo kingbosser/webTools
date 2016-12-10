@@ -1,0 +1,146 @@
+/*ie9及以下版本的浏览器不支持弹性盒子布局*/
+
+1.不定宽高的水平垂直方式：
+.wrapper{
+	position:absolute;
+	left:50%;
+	top:50%;
+	/*兼容写法*/
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	-o-tranform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+}
+
+.wrapper{
+	display:-webkit-flex;
+	justify-content:center;
+	align-items:center;
+}
+
+
+.wrapper{
+	display: table;
+}
+.inner{
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 1;
+}
+
+2，单行文本溢出
+.inaline{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+多行文本溢出
+.intwoline{
+	display:-webkit-box;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	word-break:break-all;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+}
+3.zepto.js
+4.fastclick.js
+5.弹性滚动
+body{
+	overflow:scroll;
+	-webkit-overflow-scrolling:touch;
+}
+
+6.为了能过跨浏览器支持灰度的效果,我们可以把上述方法和一起使用下面的代码片段去实现。
+这段代码将支持Firefox 3.5+, Opera 15+, Safari, Chrome, and IE 
+
+创建一个SVG文件,并将以下代码写在里面，保存命名为***.svg 
+<svgxmlns=" http://www.w3.org/2000/svg"> 
+<filterid="grayscale"> 
+<feColorMatrixtype="matrix"values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"/> 
+</filter> 
+</svg> 
+
+img { 
+-webkit-filter: grayscale(100%); 
+-webkit-filter: grayscale(1); 
+filter: grayscale(100%); 
+filter:url('../img/gray.svg#grayscale'); 
+filter:gray; 
+}
+.no-js img { 
+-webkit-filter: grayscale(100%); 
+-webkit-filter: grayscale(1); 
+filter: grayscale(100%); 
+filter:url('../img/gray.svg#grayscale'); 
+filter:gray; 
+} 
+
+7.弹性盒子
+/*弹性盒子*/
+	display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+
+/*盒子子元素排列方向*/
+ -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+用box-orient:horizontal + box-direction:normal/reverse可以达到flex-direction:row/row-reverse效果
+
+用box-orient:vertical + box-direction:normal/reverse可以达到flex-direction:column/column-reverse效果
+
+
+定义子元素换行情况
+-webkit-flex-wrap:wrap;
+    -webkit-box-lines:multiple;
+    -moz-flex-wrap:wrap;
+    flex-wrap:wrap;
+
+flex-flow兼容
+-webkit-flex-flow:row wrap;
+    -webkit-box-orient:horizontal;
+    -webkit-box-lines:multiple;
+　　-moz-flex-flow:row wrap;
+    box-orient:horizontal;
+    box-lines:multiple;
+    flex-flow:row wrap;
+
+横向排列布局
+-webkit-justify-content:center;
+justify-content:center;
+-moz-box-pack:center;
+-webkit--moz-box-pack:center;
+box-pack:center;
+
+竖向排列布局
+align-items:center;
+-webkit-align-items:center;
+box-align:center;
+-moz-box-align:center;
+-webkit-box-align:center;
+
+伸缩盒子布局兼容
+box-flex:num;
+-webkit-box-flex:num;
+-moz-box-flex:num;
+flex:num;
+-webkit-flex:num;
+
+ 元素出现顺序
+box-order:num;
+-webkit-box-order:num;
+-moz-box-order:num;
+order:num;
+-webkit-order:num;
+
+
+
+
