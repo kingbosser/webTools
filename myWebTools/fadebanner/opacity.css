@@ -1,0 +1,15 @@
+body,div,ul,li,a,img{margin: 0;padding: 0;}
+  ul,li{list-style: none;}
+  a{text-decoration: none;}
+  .wrapper{position: relative;margin: 30px auto;width: 400px;height: 200px;}
+  .banner{width: 400px;height: 200px;overflow: hidden;}
+  .imgList{width:400px;height:200px;z-index: 10;}
+  .imgList li{display: none;}
+  .imgList .imgOn{display: inline;}
+  .bg{position: absolute;bottom: 0;width: 400px;height: 40px;z-index:20;opacity: 0.4;filter:alpha(opacity=40);background: black;}
+  .infoList{position: absolute;left: 10px;bottom: 10px;z-index: 30;}
+  .infoList li{display: none;}
+  .infoList .infoOn{display: inline;color: white;}
+  .indexList{position: absolute;right: 10px;bottom: 5px;z-index: 30;}
+  .indexList li{float: left;margin-right: 5px;padding: 2px 4px;border: 2px solid black;background: grey;cursor: pointer;}
+  .indexList .indexOn{background: red;font-weight: bold;color: white;}

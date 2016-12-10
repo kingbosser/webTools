@@ -1,0 +1,113 @@
+ *{ 
+        margin: 0; 
+        padding: 0; 
+        text-decoration: none;
+}
+body{
+        padding: 20px;
+}
+
+/*显示区域*/
+#container { 
+        /*父级容器宽高就是图片显示区域的宽高*/
+        width: 600px; 
+        height: 400px; 
+        border: 3px solid #333; 
+        overflow: hidden; 
+        position: relative;
+        margin: 0 auto;
+}
+
+/*图片列表*/
+#list { 
+        /*图片列表宽度为所有图片宽度之和*/
+        /*为了实现无限滚动，在列表中需要多加两张照片*/
+        width: 4200px; 
+        height: 400px;
+         /*为了实现切换，需设置列表绝对定位，改变left值实现切换*/
+        position: absolute; 
+        z-index: 1;
+}
+        /*图片在列表中左浮动，多出的部分向右隐藏*/
+#list img { 
+        float: left;
+}
+
+
+/*焦点*/
+#buttons { 
+        position: absolute; 
+        height: 10px;
+        /*宽度必须设置为容纳焦点*/
+        width: 100px; 
+        z-index: 2; 
+        bottom: 20px; 
+        left: 250px;
+}
+        
+#buttons span { 
+        /*例外情况，如果设置为display为inline-block时，会产生4px的margin，
+        解决方法，父级设置font-size为0即可*/
+        cursor: pointer; 
+        float: left; 
+        border: 1px solid #fff; 
+        width: 10px; 
+        height: 10px;
+        /*兼容处理*/
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%; 
+        border-radius: 50%; 
+        background: #333;
+        margin-right: 5px;
+}
+        
+#buttons .on { 
+         /*焦点激活状态*/
+        background: orangered;
+}
+
+
+
+/*左右切换按钮*/
+/*按钮位置及公共样式*/
+.arrow { 
+        cursor: pointer; 
+        display: none; 
+        line-height: 39px; 
+        text-align: center; 
+        font-size: 36px; 
+        font-weight: bold; 
+        width: 40px; 
+        height: 40px;  
+        position: absolute; 
+        z-index: 2; 
+        top: 180px; 
+        /*有兼容问题*/
+        /*background-color: RGBA(0,0,0,.3); */
+        background-color: #000;
+        filter:alpha(opacity=30);
+        opacity: 0.3;
+        color: #fff;
+}
+/*鼠标移入按钮样式*/
+.arrow:hover { 
+        /*background-color: RGBA(0,0,0,.7);*/
+        background-color: #000;
+        filter:alpha(opacity=70);
+        opacity: 0.7;
+}
+
+
+/*按钮出现*/
+#container:hover .arrow { 
+        display: block;
+}
+/*左右按钮定位*/
+#prev { 
+        left: 20px;
+}
+#next { 
+        right: 20px;
+}
+

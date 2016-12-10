@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="banner.css">
+	<script type="text/javascript" src="banner.js"></script>
+	<title>banner切换原理</title>
+</head>
+<!-- banner整个父级容器 -->
+<body>
+	<div id="container">
+		<!-- 图片列表 -->
+		<div id="list" style="left:-600px">
+			<!-- 最后一张的副本放置在开头 -->
+			<img src="img/5.jpg" alt="5"/>
+        	<img src="img/1.jpg" alt="1"/>
+       	 	<img src="img/2.jpg" alt="2"/>
+       	 	<img src="img/3.jpg" alt="3"/>
+       	 	<img src="img/4.jpg" alt="4"/>
+        	<img src="img/5.jpg" alt="5"/>
+        	<img src="img/1.jpg" alt="1"/>
+			<!-- 第一张的副本放置在最后 -->
+		</div>
+		<!-- 焦点 -->
+		<div id="buttons">
+			<!-- 焦点利用span标签制作，index代表焦点序号，类on代表焦点激活状态 -->
+			<span index="1" class="on"></span>
+        	<span index="2"></span>
+        	<span index="3"></span>
+       	 	<span index="4"></span>
+        	<span index="5"></span>
+		</div>
+		<!-- 左右切换按钮 -->
+		<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+		<a href="javascript:;" id="next" class="arrow">&gt;</a>
+	</div>
+</body>
+</html>
