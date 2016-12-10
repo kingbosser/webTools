@@ -1,0 +1,69 @@
+.CarouselWrap{
+	width: 600px;
+	height: 400px;
+	margin: 100px auto;
+	border: 1px solid #ccc;
+	position: relative;
+	overflow: hidden;
+}
+.CarouselWrap ul{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+/*.CarouselWrap .carouseItem{
+	display: none;
+}
+.CarouselWrap .carouseItem:first-child{
+	display: block;
+}*/
+.carouseBtn{
+	position: absolute;
+	display: block;
+	/*按钮大小*/
+	width: 45px;
+	height: 45px;
+	top:0px;
+	/*js调整位置*/
+}
+.prevBtn{
+	left: 0px;
+	background: url(btn_l.png) no-repeat left center;
+}
+.nextBtn{
+	right: 0px;
+	background: url(btn_r.png) no-repeat right center;
+}
+.focus{
+	width: 90px;
+	height: 10px;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -25px;
+	/*js调整位置关系*/
+	font-size: 0px;
+	overflow: hidden;
+}
+.focus p{
+	width: 100px;
+	height: 100%;
+}
+/*定义焦点样式*/
+.focus span{
+	display: inline-block;
+	width: 10px;
+	height: 100%;
+	-o-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #fff;
+	margin-right: 10px;
+}
+.focus span.active{
+	background-color: yellow;
+}

@@ -1,0 +1,112 @@
+body{
+	text-align: center;/*使行内或行内块级元素居中*/
+	font-size: 0px;/*去掉inline-block的4px间距*/
+}
+.wxgd-main{
+	/*宽度由内容撑开*/
+	/*高度已定,最好和放大后的图片等高*/
+	height: 100px;
+	margin-top: 100px;
+	font-size: 0px;/*去掉inline-block的4px间距*/
+	display:inline-block;/*自适应内容宽度*/ 
+	/*兼容*/
+	*display:inline; 
+	*zoom:1;
+}
+.wxgd-picshow{
+	/*宽度自适应*/
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+}
+.wxgd-list{
+	/*宽度自适应*/
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.wxgd-item{
+	float: left;
+	/*宽度自定义*/
+	width: 100px;
+	height: 100%;
+	position: relative;
+
+
+
+	/*此处z-index的值等于你想展示的图片数目*/
+	z-index: 5;
+	/**************************/
+
+
+	overflow: hidden;
+}
+.wxgd-item a{
+	display: block;
+	/*单位图片的大小和位置固定*/
+	width: 100px;
+	height: 100px;
+	/**************************/
+	position: absolute;
+	/*下面的方式智能兼容到IE9*/
+	/*top: 50%;
+	left: 50%;
+	-webkit-transform:translate(-50%,-50%); 
+	-o-transform:translate(-50%,-50%); 
+	-moz-transform:translate(-50%,-50%); 
+	-ms-transform:translate(-50%,-50%); 
+	transform:translate(-50%,-50%); */
+	/*使元素居中*/
+	/*下面的方式智能兼容到IE8*/
+	/*overflow: auto;*//*避免元素溢出*/
+	margin: auto;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+/*移动到图片上会出现类，蒙版*/
+.wxgd-item a .mb{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	display: none;
+	padding-top: 40px;
+}
+.active a .mb{
+	display: block;
+}
+.wxgd-btn{
+	display: inline-block;
+	width: 50px;
+	height: 100%;
+}
+.wxgd-prev-btn{
+	background: url(btn_l.png) no-repeat center center;
+}
+.wxgd-next-btn{
+	background: url(btn_r.png) no-repeat center center;
+}
+#textarea{
+	position: absolute;
+	z-index: 100;
+	font-size: 20px;
+	color: red;
+	left: 0px;
+	top: 30px;
+	text-align: left;
+}
+@media screen and (max-width: 1000px){
+	/*如果在媒体查询中，可以随浏览器随时调整图片张数*/
+	.wxgd-item{
+		z-index: 2;
+	}	
+}

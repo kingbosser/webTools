@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="Carousel.css">
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="Carousel.js"></script>
+	<title>自定义轮播插件</title>
+</head>
+<body>
+	<div class="J_Carousel CarouselWrap" data-settings='{
+		"carouselStyle":"slide",
+		"width":500,
+		"height":300,
+		"speed":1000,
+		"autoPlay":false,
+		"delay":3000,
+		"btnshow":true,
+		"focusshow":true
+	}'>
+		<ul class="carouselList">
+			<li class="carouseItem"><a href="#"><img src="1.jpg" alt="1" width="100%" height="100%"></a></li>
+			<li class="carouseItem"><a href=""><img src="2.jpg" alt="2" width="100%" height="100%"></a></li>
+			<li class="carouseItem"><a href=""><img src="3.jpg" alt="3" width="100%" height="100%"></a></li>
+			<li class="carouseItem"><a href=""><img src="4.jpg" alt="4" width="100%" height="100%"></a></li>
+			<li class="carouseItem"><a href=""><img src="5.jpg" alt="5" width="100%" height="100%"></a></li>
+		</ul>
+		<div href="" class="carouseBtn prevBtn"></div>	
+		<div href="" class="carouseBtn nextBtn"></div>
+		<div class="focus"><p><span class="active"></span><span></span><span></span><span></span><span></span></p></div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			Carousel.init($(".J_Carousel"));
+		});
+	</script>
+</body>
+</html>
